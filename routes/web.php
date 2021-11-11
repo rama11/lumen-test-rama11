@@ -17,8 +17,11 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/test', function () use ($router) {
-    return "Hi, this is testing";
-});
+$app->group(['prefix' => 'admin'], function () use ($app) {
+    $app->post('login', function ()    {
+        return "Test Post Login";
+    });
 
+    
+});
 
