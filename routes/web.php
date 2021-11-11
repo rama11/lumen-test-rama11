@@ -17,8 +17,33 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/test', function () use ($router) {
-    return "Hi, this is testing";
-});
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->post('login', function ()    {
+        return "Test Post Login";
+    });
 
+    $router->post('checkToken', function ()    {
+        return "Test Post Check Token";
+    });
+
+    $router->post('refreshToken', function ()    {
+        return "Test Post Refresh Token";
+    });
+
+
+
+    $router->get('user', function ()    {
+        return "Get User (Admin)";
+    });
+
+    $router->group(['prefix' => 'user'], function () use ($router) {
+        $router->get('detail', function ()    {
+            return "Get User Detail (Admin)";
+        });
+
+        $router->get('logLogin', function ()    {
+            return "Get User Log Login (Admin)";
+        });
+    });
+});
 
