@@ -22,6 +22,10 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
         return "Test Post Login";
     });
 
+    $app->post('checkToken', function ()    {
+        return "Test Post Check Token";
+    });
+
     
 });
 
