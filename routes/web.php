@@ -31,7 +31,11 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
     });
 
     $app->group(['prefix' => 'user'], function () use ($app) {
-       
+        $app->get('detail', function ()    {
+            return "Test Post Login";
+        });
+
+        
     });
 });
 
