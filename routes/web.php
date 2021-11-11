@@ -35,7 +35,9 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
             return "Test Post Login";
         });
 
-        
+        $app->get('logLogin', function ()    {
+            return "Test Post Login";
+        });
     });
 });
 
