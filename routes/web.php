@@ -17,26 +17,32 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$app->group(['prefix' => 'admin'], function () use ($app) {
-    $app->post('login', function ()    {
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->post('login', function ()    {
         return "Test Post Login";
     });
 
-    $app->post('checkToken', function ()    {
+    $router->post('checkToken', function ()    {
         return "Test Post Check Token";
     });
 
-    $app->post('refreshToken', function ()    {
+    $router->post('refreshToken', function ()    {
         return "Test Post Refresh Token";
     });
 
-    $app->group(['prefix' => 'user'], function () use ($app) {
-        $app->get('detail', function ()    {
-            return "Test Post Login";
+
+
+    $router->get('user', function ()    {
+        return "Get User (Admin)";
+    });
+
+    $router->group(['prefix' => 'user'], function () use ($router) {
+        $router->get('detail', function ()    {
+            return "Get User Detail (Admin)";
         });
 
-        $app->get('logLogin', function ()    {
-            return "Test Post Login";
+        $router->get('logLogin', function ()    {
+            return "Get User Log Login (Admin)";
         });
     });
 });
