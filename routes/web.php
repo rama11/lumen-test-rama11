@@ -26,6 +26,10 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
         return "Test Post Check Token";
     });
 
+    $app->post('refreshToken', function ()    {
+        return "Test Post Refresh Token";
+    });
+
     
 });
 
