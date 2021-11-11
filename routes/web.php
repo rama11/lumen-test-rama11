@@ -30,6 +30,8 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
         return "Test Post Refresh Token";
     });
 
-    
+    $app->group(['prefix' => 'user'], function () use ($app) {
+       
+    });
 });
 
